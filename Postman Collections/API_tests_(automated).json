@@ -229,8 +229,8 @@
 									"script": {
 										"id": "cfc59d9b-cb46-4ada-96e5-95cb296dbf36",
 										"exec": [
-											"pm.test(\"Status code is 422\", function () {",
-											"    pm.response.to.have.status(422);",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
 											"});",
 											"",
 											"pm.test(\"Verify the error message\", function () {",
