@@ -860,6 +860,9 @@
 									"script": {
 										"id": "e79a82f5-fb5e-4862-a011-ac176affce95",
 										"exec": [
+											"pm.test(\"Status code is 422\", function () {",
+											"    pm.response.to.have.status(422);",
+											"});",
 											"//Verify incorrect password responce body is correct",
 											"pm.test(\"Your test name\", function () {",
 											"    var jsonData = pm.response.json();",
