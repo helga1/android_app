@@ -1,0 +1,754 @@
+{
+	"info": {
+		"_postman_id": "beb90f96-15c3-468b-9976-e8cb307c653e",
+		"name": "TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REGISTER",
+			"item": [
+				{
+					"name": "Register with email and password",
+					"item": [
+						{
+							"name": "Positive / Register with email, password and name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cfc59d9b-cb46-4ada-96e5-95cb296dbf36",
+										"exec": [
+											"//verify response code is 200",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"//verify body contains all fields",
+											"pm.test(\"Verification new user Stats\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.stats).to.eql({",
+											"            \"dailySessions\": 0,",
+											"            \"longestStreak\": 0,",
+											"            \"weekendStreak\": 0,",
+											"            \"prayTime\": 0,",
+											"            \"musicTime\": 0,",
+											"            \"mindTime\": 0,",
+											"            \"fellowshipCount\": 0,",
+											"            \"totalDailySessions\": 0",
+											"        });",
+											"        ",
+											"});",
+											"",
+											"pm.test(\"Verification email conformation\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.emailConfirmation.confirmed).to.eql(false);",
+											"});",
+											"",
+											"pm.test(\"Verification that user created with id\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user._id).to.not.be.empty;",
+											"});",
+											"",
+											"pm.test(\"Verification gamification stats\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.gamification).to.eql({",
+											"            \"candles\": 0,",
+											"            \"isActive\": false,",
+											"            \"hasUnclaimedReferralGift\": false",
+											"        });",
+											"});",
+											"",
+											"pm.test(\"Verification notification default settings\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.notificationSettings).to.eql({",
+											"            \"prayerRequests\": true,",
+											"            \"prayerUpdates\": true,",
+											"            \"prayerResponses\": true,",
+											"            \"fellowshipRequests\": true",
+											"        });",
+											"});",
+											"",
+											"pm.test(\"Verification that user created email\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    const email = pm.environment.get(\"new_account_email\");",
+											"    pm.expect(jsonData.user.email).to.eql(email);",
+											"});",
+											"",
+											"pm.test(\"Verification that user created with nickname\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.nickname).to.eql(\"Olga's test\");",
+											"});",
+											"",
+											"pm.test(\"Verification user Status\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.status).to.eql(\"active\");",
+											"});",
+											"",
+											"pm.test(\"Verification push notification setting\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.pushNotifications).to.eql(true);",
+											"});",
+											"//work",
+											"pm.test(\"Verification email Notification setting\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.emailNotifications).to.eql(true);",
+											"});",
+											"",
+											"//discuss which survey",
+											"pm.test(\"Verification that user had seen survey\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.didSeeSurvey).to.eql(false);",
+											"});",
+											"",
+											"pm.test(\"Verification Role/subscription\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.role).to.eql(\"basic\");",
+											"});",
+											"",
+											"pm.test(\"Verification if user has subscription\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.user.hasSubscription).to.eql(false);",
+											"});",
+											"",
+											"pm.test(\"Verification that user got token\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.authToken).to.not.be.empty",
+											"});",
+											"",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "02942f76-e7c5-48e7-8fe7-5cb0643c238c",
+										"exec": [
+											"var local = Date.now()",
+											"var uniqueEmail= `${local}olga@test.com`",
+											"pm.environment.set(\"new_account_email\", uniqueEmail);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "a33e76fd-286d-4e53-8022-9f40ac137c8c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "ios 13.0 glorify/{{iOS_App_Version}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"{{new_account_email}}\",\n\t\"password\": \"{{Password}}\",\n\t\"nickname\": \"Olga's test\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v1/users/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Negative / Register with used email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cfc59d9b-cb46-4ada-96e5-95cb296dbf36",
+										"exec": [
+											"pm.test(\"Status code is 422\", function () {",
+											"    pm.response.to.have.status(422);",
+											"});",
+											"",
+											"pm.test(\"Verify the error message\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error.msg).to.eql(\"The email address you have entered is already registered. Please Sign In.\");",
+											"});",
+											"",
+											"pm.test(\"Verify the error message\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error.code).to.eql(\"EmailAlreadyExists\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "02942f76-e7c5-48e7-8fe7-5cb0643c238c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "19ac320b-556b-4ed7-b8a1-adb0d27ecb8a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "ios 13.0 glorify/{{iOS_App_Version}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"o@dev.com\",\n\t\"password\": \"{{Password}}\",\n\t\"nickname\": \"Olga's test\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v1/users/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Negative / Register with short password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cfc59d9b-cb46-4ada-96e5-95cb296dbf36",
+										"exec": [
+											"pm.test(\"Status code is 422\", function () {",
+											"    pm.response.to.have.status(422);",
+											"});",
+											"",
+											"pm.test(\"Verify the error message\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error.msg).to.eql(\"Your password must contain at least 6 characters.\");",
+											"});",
+											"",
+											"pm.test(\"Verify the error message\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error.code).to.eql(\"InvalidPassword\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "02942f76-e7c5-48e7-8fe7-5cb0643c238c",
+										"exec": [
+											"var local = Date.now()",
+											"var uniqueEmail= `${local}olga@test.com`",
+											"pm.environment.set(\"new_account_email\", uniqueEmail);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "fcb87c46-4903-4734-b325-7d76883a9fd5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "ios 13.0 glorify/{{iOS_App_Version}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"{{new_account_email}}\",\n\t\"password\": \"12345\",\n\t\"nickname\": \"Olga's test\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v1/users/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Negative / Register with blank spaces instead of password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cfc59d9b-cb46-4ada-96e5-95cb296dbf36",
+										"exec": [
+											"pm.test(\"Status code is 422\", function () {",
+											"    pm.response.to.have.status(422);",
+											"});",
+											"",
+											"pm.test(\"Verify the error message\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error.msg).to.eql(\"Your password can't contain spaces\");",
+											"});",
+											"",
+											"pm.test(\"Verify the error message\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error.code).to.eql(\"InvalidPassword\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "02942f76-e7c5-48e7-8fe7-5cb0643c238c",
+										"exec": [
+											"var local = Date.now()",
+											"var uniqueEmail= `${local}olga@test.com`",
+											"pm.environment.set(\"new_account_email\", uniqueEmail);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "af7cbd33-5428-46a2-99df-9595880b1282",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "ios 13.0 glorify/{{iOS_App_Version}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"{{new_account_email}}\",\n\t\"password\": \"       \",\n\t\"nickname\": \"Olga's test\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v1/users/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Negative / Register with password special charackters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cfc59d9b-cb46-4ada-96e5-95cb296dbf36",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "02942f76-e7c5-48e7-8fe7-5cb0643c238c",
+										"exec": [
+											"var local = Date.now()",
+											"var uniqueEmail= `${local}olga@test.com`",
+											"pm.environment.set(\"new_account_email\", uniqueEmail);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "32f1a314-9f2f-417f-8adf-39e8ca8a6b46",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "ios 13.0 glorify/{{iOS_App_Version}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"{{new_account_email}}\",\n\t\"password\": \"!@#$%^&*()_+\",\n\t\"nickname\": \"Olga's test\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v1/users/register"
+							},
+							"response": []
+						}
+					],
+					"id": "7bc8707f-0998-4558-aefd-eaca8a71da35"
+				}
+			],
+			"id": "85ba7b99-eece-4b93-ac74-afa8b3f65f9e"
+		},
+		{
+			"name": "LOGIN",
+			"item": [
+				{
+					"name": "Login with enmail and password",
+					"item": [
+						{
+							"name": "Positive login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e79a82f5-fb5e-4862-a011-ac176affce95",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"//Verify user got authentication token",
+											"pm.test(\"Verify the error message\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.authToken).to.not.be.empty",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8b3c64f3-59f9-4fb5-9e33-15011536bc69",
+										"exec": [
+											"// JWT generation script adapted from",
+											"// https://gist.github.com/corbanb/db03150abbe899285d6a86cc480f674d",
+											"",
+											"var jwtSecret = pm.globals.get('jwt_hash') || ''",
+											"",
+											"// Set headers for JWT",
+											"var header = {",
+											"\t'typ': 'JWT',",
+											"\t'alg': 'HS256'",
+											"};",
+											"",
+											"// Prepare timestamp in seconds",
+											"var currentTimestamp = Math.floor(Date.now() / 1000)",
+											"",
+											"var data = {",
+											"\t'path': \"/\" + pm.request.url.toString().slice(12),",
+											"\t'exp': currentTimestamp + 180, // expiry time is 30 seconds from time of creation",
+											"}",
+											"",
+											"",
+											"function base64url(source) {",
+											"    // Encode in classical base64",
+											"    encodedSource = CryptoJS.enc.Base64.stringify(source)",
+											"    ",
+											"    // Remove padding equal characters",
+											"    encodedSource = encodedSource.replace(/=+$/, '')",
+											"    ",
+											"    // Replace characters according to base64url specifications",
+											"    encodedSource = encodedSource.replace(/\\+/g, '-')",
+											"    encodedSource = encodedSource.replace(/\\//g, '_')",
+											"    ",
+											"    return encodedSource",
+											"}",
+											"",
+											"// encode header",
+											"var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header))",
+											"var encodedHeader = base64url(stringifiedHeader)",
+											"",
+											"// encode data",
+											"var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify(data))",
+											"var encodedData = base64url(stringifiedData)",
+											"",
+											"// build token",
+											"var token = `${encodedHeader}.${encodedData}`",
+											"",
+											"// sign token",
+											"var signature = CryptoJS.HmacSHA256(token, jwtSecret)",
+											"signature = base64url(signature)",
+											"var signedToken = `${token}.${signature}`",
+											"",
+											"pm.environment.set('hash', signedToken)",
+											"pm.request.headers.add(signedToken, 'hash')",
+											"console.log('Signed and encoded JWT', signedToken)",
+											"console.log('Data: \\n', data)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "5ad8bb68-30db-4b3e-8b84-080bb2f97e2c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "android 13 glorify/2.42.0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"o@dev.com\",\n    \"password\": \"{{userPassword}}\"\n}\n"
+								},
+								"url": "{{BASE_URL}}/api/v2/users/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Negative / Login w wrong password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e79a82f5-fb5e-4862-a011-ac176affce95",
+										"exec": [
+											"//Verify incorrect password responce body is correct",
+											"pm.test(\"Your test name\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error).to.eql({",
+											"        \"code\": \"IncorrectEmailOrPassword\",",
+											"        \"status\": 422,",
+											"        \"msg\": \"The email or password you have entered is incorrect. Please try again.\"",
+											"    });",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8b3c64f3-59f9-4fb5-9e33-15011536bc69",
+										"exec": [
+											"// JWT generation script adapted from",
+											"// https://gist.github.com/corbanb/db03150abbe899285d6a86cc480f674d",
+											"",
+											"var jwtSecret = pm.globals.get('jwt_hash') || ''",
+											"",
+											"// Set headers for JWT",
+											"var header = {",
+											"\t'typ': 'JWT',",
+											"\t'alg': 'HS256'",
+											"};",
+											"",
+											"// Prepare timestamp in seconds",
+											"var currentTimestamp = Math.floor(Date.now() / 1000)",
+											"",
+											"var data = {",
+											"\t'path': \"/\" + pm.request.url.toString().slice(12),",
+											"\t'exp': currentTimestamp + 180, // expiry time is 30 seconds from time of creation",
+											"}",
+											"",
+											"",
+											"function base64url(source) {",
+											"    // Encode in classical base64",
+											"    encodedSource = CryptoJS.enc.Base64.stringify(source)",
+											"    ",
+											"    // Remove padding equal characters",
+											"    encodedSource = encodedSource.replace(/=+$/, '')",
+											"    ",
+											"    // Replace characters according to base64url specifications",
+											"    encodedSource = encodedSource.replace(/\\+/g, '-')",
+											"    encodedSource = encodedSource.replace(/\\//g, '_')",
+											"    ",
+											"    return encodedSource",
+											"}",
+											"",
+											"// encode header",
+											"var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header))",
+											"var encodedHeader = base64url(stringifiedHeader)",
+											"",
+											"// encode data",
+											"var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify(data))",
+											"var encodedData = base64url(stringifiedData)",
+											"",
+											"// build token",
+											"var token = `${encodedHeader}.${encodedData}`",
+											"",
+											"// sign token",
+											"var signature = CryptoJS.HmacSHA256(token, jwtSecret)",
+											"signature = base64url(signature)",
+											"var signedToken = `${token}.${signature}`",
+											"",
+											"pm.environment.set('hash', signedToken)",
+											"pm.request.headers.add(signedToken, 'hash')",
+											"console.log('Signed and encoded JWT', signedToken)",
+											"console.log('Data: \\n', data)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "50343450-7db6-4d3a-98a9-a400c88fc7ca",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "android 13 glorify/2.42.0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"o@dev.com\",\n    \"password\": \"Green1111\"\n}\n"
+								},
+								"url": "{{BASE_URL}}/api/v2/users/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Negative / Login w wrong Email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e79a82f5-fb5e-4862-a011-ac176affce95",
+										"exec": [
+											"//Verify incorrect password responce body is correct",
+											"pm.test(\"Your test name\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.error).to.eql({",
+											"        \"code\": \"IncorrectEmailOrPassword\",",
+											"        \"status\": 422,",
+											"        \"msg\": \"The email or password you have entered is incorrect. Please try again.\"",
+											"    });",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8b3c64f3-59f9-4fb5-9e33-15011536bc69",
+										"exec": [
+											"// JWT generation script adapted from",
+											"// https://gist.github.com/corbanb/db03150abbe899285d6a86cc480f674d",
+											"",
+											"var jwtSecret = pm.globals.get('jwt_hash') || ''",
+											"",
+											"// Set headers for JWT",
+											"var header = {",
+											"\t'typ': 'JWT',",
+											"\t'alg': 'HS256'",
+											"};",
+											"",
+											"// Prepare timestamp in seconds",
+											"var currentTimestamp = Math.floor(Date.now() / 1000)",
+											"",
+											"var data = {",
+											"\t'path': \"/\" + pm.request.url.toString().slice(12),",
+											"\t'exp': currentTimestamp + 180, // expiry time is 30 seconds from time of creation",
+											"}",
+											"",
+											"",
+											"function base64url(source) {",
+											"    // Encode in classical base64",
+											"    encodedSource = CryptoJS.enc.Base64.stringify(source)",
+											"    ",
+											"    // Remove padding equal characters",
+											"    encodedSource = encodedSource.replace(/=+$/, '')",
+											"    ",
+											"    // Replace characters according to base64url specifications",
+											"    encodedSource = encodedSource.replace(/\\+/g, '-')",
+											"    encodedSource = encodedSource.replace(/\\//g, '_')",
+											"    ",
+											"    return encodedSource",
+											"}",
+											"",
+											"// encode header",
+											"var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header))",
+											"var encodedHeader = base64url(stringifiedHeader)",
+											"",
+											"// encode data",
+											"var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify(data))",
+											"var encodedData = base64url(stringifiedData)",
+											"",
+											"// build token",
+											"var token = `${encodedHeader}.${encodedData}`",
+											"",
+											"// sign token",
+											"var signature = CryptoJS.HmacSHA256(token, jwtSecret)",
+											"signature = base64url(signature)",
+											"var signedToken = `${token}.${signature}`",
+											"",
+											"pm.environment.set('hash', signedToken)",
+											"pm.request.headers.add(signedToken, 'hash')",
+											"console.log('Signed and encoded JWT', signedToken)",
+											"console.log('Data: \\n', data)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "3a266aeb-c8a1-47fa-a322-dcf499b9f0ff",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "android 13 glorify/2.42.0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"nonexistingEmail@dev.com\",\n    \"password\": \"Green1111!\"\n}\n"
+								},
+								"url": "{{BASE_URL}}/api/v2/users/login"
+							},
+							"response": []
+						}
+					],
+					"id": "67e4cbce-08b8-444c-8821-beca9898ab4d"
+				}
+			],
+			"id": "69e6aada-afc4-4aed-a821-2840668b6d8b"
+		}
+	]
+}
