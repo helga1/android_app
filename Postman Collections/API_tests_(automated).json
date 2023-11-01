@@ -1630,7 +1630,90 @@
 				},
 				{
 					"name": "Daily Worship user session",
-					"item": [],
+					"item": [
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "user",
+									"id": "ef564ad5-b8c1-4bbe-a4fe-2001b52452c4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Host",
+												"value": "api.dev.glorify-app.com"
+											},
+											{
+												"key": "authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzOSIsInNlc3Npb25JZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzYiIsInYiOjIsImlhdCI6MTY5ODg3MDQxNH0.yVNMEwnziVaiynWyJKTr6_luUPK-RqGvXyD0AqdPgVk"
+											},
+											{
+												"key": "hash",
+												"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbi91c2VyL3N0YXRzIiwiZXhwIjoxNjk4ODcwNjUwfQ.GzKE4HduV9iU-rUrhy9uGVO48PTXm34TSzT_oDw15jk"
+											},
+											{
+												"key": "content-type",
+												"value": "application/json"
+											},
+											{
+												"key": "accept-language",
+												"value": "en"
+											},
+											{
+												"key": "app-agent",
+												"value": "android 13 glorify/2.44.0"
+											},
+											{
+												"key": "timezone",
+												"value": "-07:00"
+											},
+											{
+												"key": "user-agent",
+												"value": "okhttp/5.0.0-alpha.10"
+											}
+										],
+										"url": {
+											"raw": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/user/stats?start=2023-10-30&end=2023-11-05&localDate=2023-11-01",
+											"protocol": "https",
+											"host": [
+												"api",
+												"dev",
+												"glorify-app",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship-user-session",
+												"user",
+												"stats"
+											],
+											"query": [
+												{
+													"key": "start",
+													"value": "2023-10-30"
+												},
+												{
+													"key": "end",
+													"value": "2023-11-05"
+												},
+												{
+													"key": "localDate",
+													"value": "2023-11-01"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "86cd1346-d556-4009-9c36-65c5b0f4df86"
+						}
+					],
 					"id": "c354ae7e-f226-4c20-aa5a-b4b0b42f2aba"
 				}
 			],
