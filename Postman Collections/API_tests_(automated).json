@@ -970,6 +970,16 @@
 				}
 			],
 			"id": "69e6aada-afc4-4aed-a821-2840668b6d8b"
+		},
+		{
+			"name": "Android Happy Path",
+			"item": [],
+			"id": "c2deb997-eae5-4994-a608-2b94b4e3bae7"
+		},
+		{
+			"name": "iOS Happy Path",
+			"item": [],
+			"id": "919019d3-2651-4c9c-91af-eda9e2fc58bc"
 		}
 	]
 }
