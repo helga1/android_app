@@ -1641,7 +1641,25 @@
 							"name": "User",
 							"item": [
 								{
-									"name": "user",
+									"name": "user stats",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "3c48d948-9233-49f8-8922-289c9c1844fe",
+												"exec": [
+													"",
+													"",
+													"pm.test(\"Verify what user is correct\", function () {",
+													"    var jsonData = pm.response.json();",
+													"   let user_id = pm.environment.get(\"current_user_id\");",
+													"    pm.expect(jsonData.userDailySessions._id).to.eql(user_id)",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"id": "ef564ad5-b8c1-4bbe-a4fe-2001b52452c4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
