@@ -2185,6 +2185,119 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v2/candles/stats/dailyWorship",
+					"id": "9417f2de-ecf8-49df-8618-68d8f2ccb32c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9jYW5kbGVzL3N0YXRzL2RhaWx5V29yc2hpcCIsImV4cCI6MTY5ODg3ODQzM30.qNFixtGL3SniitD8pW1d6FWUD-pUv4d20KxoH6W-Svo"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": "https://api.dev.glorify-app.com/api/v2/candles/stats/dailyWorship"
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v2/challenges/overlay?localDate=2023-11-01",
+					"id": "ca50e2b7-a375-42fb-a9b3-f3fb5e19b64f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9jaGFsbGVuZ2VzL292ZXJsYXkiLCJleHAiOjE2OTg4Nzg0MzN9.OJKjh7ekPhCwvWrkWKVGCWmAxfdapEpZqF10sODr_0s"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v2/challenges/overlay?localDate=2023-11-01",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"challenges",
+								"overlay"
+							],
+							"query": [
+								{
+									"key": "localDate",
+									"value": "2023-11-01"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "668a14d3-9379-4cf4-869c-99c4c8958d55"
