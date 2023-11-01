@@ -1266,7 +1266,7 @@
 					"response": []
 				},
 				{
-					"name": "https://api.dev.glorify-app.com/api/v2/candles/stats/referral",
+					"name": "Verification if user is reffered",
 					"id": "c94c5318-88da-4e26-96e1-5b379b5a1e9a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1308,6 +1308,119 @@
 							}
 						],
 						"url": "https://api.dev.glorify-app.com/api/v2/candles/stats/referral"
+					},
+					"response": []
+				},
+				{
+					"name": "Candles config",
+					"id": "c045a3a0-98da-4b38-9d2a-6429f9c1d8c9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzOSIsInNlc3Npb25JZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzYiIsInYiOjIsImlhdCI6MTY5ODg3MDQxNH0.yVNMEwnziVaiynWyJKTr6_luUPK-RqGvXyD0AqdPgVk"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9jYW5kbGVzL2NvbmZpZyIsImV4cCI6MTY5ODg3MDYzN30.AlIp8kFOJnE5KF-IipLP_huqgYgGEyodlvp-ieDGBbA"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": "https://api.dev.glorify-app.com/api/v2/candles/config"
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge overlay",
+					"id": "4b82f70d-0894-485f-b3d2-73fe1cf1b996",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzOSIsInNlc3Npb25JZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzYiIsInYiOjIsImlhdCI6MTY5ODg3MDQxNH0.yVNMEwnziVaiynWyJKTr6_luUPK-RqGvXyD0AqdPgVk"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9jaGFsbGVuZ2VzL292ZXJsYXkiLCJleHAiOjE2OTg4NzA2NDh9.OMV_9_X6FVvzv_jlVBPxSMVFcnmVBI1i4KgspUDtcSQ"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v2/challenges/overlay?localDate=2023-11-01",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"challenges",
+								"overlay"
+							],
+							"query": [
+								{
+									"key": "localDate",
+									"value": "2023-11-01"
+								}
+							]
+						}
 					},
 					"response": []
 				}
