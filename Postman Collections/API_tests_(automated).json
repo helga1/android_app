@@ -2298,6 +2298,717 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/completed?start=2023-11-01&end=2023-11-01",
+					"id": "ec55166d-b00a-4d00-ae4c-2e6f0774ed94",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbi9jb21wbGV0ZWQiLCJleHAiOjE2OTg4Nzg0MzN9.T9z8krVmx0pvp0CdokmU0K6A-E7SuDNjDFzsm-rh_qo"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/completed?start=2023-11-01&end=2023-11-01",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v3",
+								"daily-worship-user-session",
+								"completed"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-11-01"
+								},
+								{
+									"key": "end",
+									"value": "2023-11-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v2/notifications/count",
+					"id": "72c50736-2e82-43c9-b195-ccc1e24abba8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9ub3RpZmljYXRpb25zL2NvdW50IiwiZXhwIjoxNjk4ODc4NDMzfQ.ZfpXa_1adHBPPVFBYWtIZylJF8crLuy7BnghbWqdZwg"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": "https://api.dev.glorify-app.com/api/v2/notifications/count"
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session",
+					"id": "02f649bb-e505-49d7-9e60-5293df8426bf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbiIsImV4cCI6MTY5ODg3ODQzNH0.oKQuf31KEkLbdIAOGy7rnFAM8EL-_mwPy25NQSb2vQc"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"date\":\"2023-11-01\",\"lang\":\"en\"}"
+						},
+						"url": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session"
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/completed?start=2023-11-01&end=2023-11-01",
+					"id": "3ca92754-a5e3-42fc-a216-2efdec7566c3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbi9jb21wbGV0ZWQiLCJleHAiOjE2OTg4Nzg0MzR9.Umz1WEr40qa0rakx4gr0i_RdrJgBhvLRTYrz8sN6elg"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/completed?start=2023-11-01&end=2023-11-01",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v3",
+								"daily-worship-user-session",
+								"completed"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-11-01"
+								},
+								{
+									"key": "end",
+									"value": "2023-11-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v2/candles/stats/referral",
+					"id": "5743f65f-65a2-4917-ad6a-8391b5e9c4f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9jYW5kbGVzL3N0YXRzL3JlZmVycmFsIiwiZXhwIjoxNjk4ODc4NDM0fQ.G9baEU89lLc0Niiv-OLRI6v21wF_YZ7TAKwJ5sUlFgA"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": "https://api.dev.glorify-app.com/api/v2/candles/stats/referral"
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/completed?start=2023-11-01&end=2023-11-05",
+					"id": "b56614c7-dacc-42ff-960d-0688f6f8da43",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbi9jb21wbGV0ZWQiLCJleHAiOjE2OTg4Nzg0MzR9.Umz1WEr40qa0rakx4gr0i_RdrJgBhvLRTYrz8sN6elg"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/completed?start=2023-11-01&end=2023-11-05",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v3",
+								"daily-worship-user-session",
+								"completed"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-11-01"
+								},
+								{
+									"key": "end",
+									"value": "2023-11-05"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/user/stats?start=2023-10-30&end=2023-11-05&localDate=2023-11-01",
+					"id": "17e961a5-db2a-44d3-a705-b7fd45f46b70",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbi91c2VyL3N0YXRzIiwiZXhwIjoxNjk4ODc4NDM0fQ.E06YrZ9Av8LrxzmyPaGzqyw0FiUKe4Kh9gQmcNgxRRM"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/user/stats?start=2023-10-30&end=2023-11-05&localDate=2023-11-01",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v3",
+								"daily-worship-user-session",
+								"user",
+								"stats"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-10-30"
+								},
+								{
+									"key": "end",
+									"value": "2023-11-05"
+								},
+								{
+									"key": "localDate",
+									"value": "2023-11-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v3/daily-worship/daily-worship-info?date=2023-11-01&lang=en",
+					"id": "43fc6be4-8fc2-4c97-89a6-ed11f13cd566",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v3/daily-worship/daily-worship-info?date=2023-11-01&lang=en",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v3",
+								"daily-worship",
+								"daily-worship-info"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2023-11-01"
+								},
+								{
+									"key": "lang",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v2/candles/config",
+					"id": "6ac3d5aa-11b3-4cd4-a137-4227d74236f4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9jYW5kbGVzL2NvbmZpZyIsImV4cCI6MTY5ODg3ODUwOX0.dOHWtxOB9JuQc0bajAp8mDXasZL4Z82mri1-Hzz2mh0"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": "https://api.dev.glorify-app.com/api/v2/candles/config"
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v2/notifications/count",
+					"id": "aa178c7f-1cf4-4712-8952-9e877fc96fd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9ub3RpZmljYXRpb25zL2NvdW50IiwiZXhwIjoxNjk4ODc4NTA5fQ.jAFHIEOnzBiY3hLo_wtfl8fVM5_X3pkRCybn6jgCIDY"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": "https://api.dev.glorify-app.com/api/v2/notifications/count"
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/6542d32e70970aaae9e6b106",
+					"id": "c2f9058f-c7c7-49ad-a5fe-60c9bb5f7d21",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbi82NTQyZDMyZTcwOTcwYWFhZTllNmIxMDYiLCJleHAiOjE2OTg4Nzg1MTB9.T7WDcnhKetIyEODOI9pgGvQG90yvIyW-_-jzE1qHGCc"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"habits\":[{\"_id\":\"152\",\"type\":\"dailyWalkWithGod\",\"isCompleted\":false},{\"_id\":\"passage:653940a8678885996ab96d69\",\"type\":\"passage\",\"isCompleted\":false},{\"_id\":\"devotional:653940a8678885996ab96d69\",\"type\":\"devotional\",\"isCompleted\":false},{\"_id\":\"653940a8678885996ab96d63\",\"type\":\"dailyQuote\",\"isCompleted\":true}],\"localDate\":\"2023-11-01\"}"
+						},
+						"url": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/6542d32e70970aaae9e6b106"
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.dev.glorify-app.com/api/v2/notes/journal?type=quote",
+					"id": "c6fe91c3-ff38-45e1-bcb8-b7eb03d3343c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9ub3Rlcy9qb3VybmFsIiwiZXhwIjoxNjk4ODc4NTEwfQ.Qv2AsXps7Xv6QOSxaiFECxCNqUzsg6WdYm7XzgpiFdQ"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": {
+							"raw": "https://api.dev.glorify-app.com/api/v2/notes/journal?type=quote",
+							"protocol": "https",
+							"host": [
+								"api",
+								"dev",
+								"glorify-app",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"notes",
+								"journal"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "quote"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "668a14d3-9379-4cf4-869c-99c4c8958d55"
