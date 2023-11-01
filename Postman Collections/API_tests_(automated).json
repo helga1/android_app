@@ -1735,7 +1735,7 @@
 									"response": []
 								},
 								{
-									"name": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/6542b4c567d7883c06f103d4",
+									"name": "open Daily worship",
 									"id": "487175ab-c76b-41fc-94c1-b24c6349e46a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
