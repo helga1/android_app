@@ -972,8 +972,170 @@
 			"id": "69e6aada-afc4-4aed-a821-2840668b6d8b"
 		},
 		{
-			"name": "Android Happy Path",
-			"item": [],
+			"name": "Android Happy Path/ EN users",
+			"item": [
+				{
+					"name": "Register with email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfc59d9b-cb46-4ada-96e5-95cb296dbf36",
+								"exec": [
+									"//verify response code is 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"//verify body contains all fields",
+									"pm.test(\"Verification new user Stats\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.stats).to.eql({",
+									"            \"dailySessions\": 0,",
+									"            \"longestStreak\": 0,",
+									"            \"weekendStreak\": 0,",
+									"            \"prayTime\": 0,",
+									"            \"musicTime\": 0,",
+									"            \"mindTime\": 0,",
+									"            \"fellowshipCount\": 0,",
+									"            \"totalDailySessions\": 0",
+									"        });",
+									"        ",
+									"});",
+									"",
+									"pm.test(\"Verification email conformation\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.emailConfirmation.confirmed).to.eql(false);",
+									"});",
+									"",
+									"pm.test(\"Verification that user created with id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user._id).to.not.be.empty;",
+									"});",
+									"",
+									"pm.test(\"Verification gamification stats\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.gamification).to.eql({",
+									"            \"candles\": 0,",
+									"            \"isActive\": false,",
+									"            \"hasUnclaimedReferralGift\": false",
+									"        });",
+									"});",
+									"",
+									"pm.test(\"Verification notification default settings\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.notificationSettings).to.eql({",
+									"            \"prayerRequests\": true,",
+									"            \"prayerUpdates\": true,",
+									"            \"prayerResponses\": true,",
+									"            \"fellowshipRequests\": true",
+									"        });",
+									"});",
+									"",
+									"pm.test(\"Verification that user created email\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    const email = pm.environment.get(\"new_account_email\");",
+									"    pm.expect(jsonData.user.email).to.eql(email);",
+									"});",
+									"",
+									"pm.test(\"Verification that user created with nickname\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.nickname).to.eql(\"Olga's test\");",
+									"});",
+									"",
+									"pm.test(\"Verification user Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.status).to.eql(\"active\");",
+									"});",
+									"",
+									"pm.test(\"Verification push notification setting\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.pushNotifications).to.eql(true);",
+									"});",
+									"//work",
+									"pm.test(\"Verification email Notification setting\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.emailNotifications).to.eql(true);",
+									"});",
+									"",
+									"//discuss which survey",
+									"pm.test(\"Verification that user had seen survey\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.didSeeSurvey).to.eql(false);",
+									"});",
+									"",
+									"pm.test(\"Verification Role/subscription\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.role).to.eql(\"basic\");",
+									"});",
+									"",
+									"pm.test(\"Verification if user has subscription\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.user.hasSubscription).to.eql(false);",
+									"});",
+									"",
+									"pm.test(\"Verification that user got token\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.authToken).to.not.be.empty",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "02942f76-e7c5-48e7-8fe7-5cb0643c238c",
+								"exec": [
+									"var local = Date.now()",
+									"var uniqueEmail= `${local}olga@test.com`",
+									"pm.environment.set(\"new_account_email\", uniqueEmail);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "223ff089-d2dd-4808-8f85-664f22383ab8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "App-Agent",
+								"value": "ios 13.0 glorify/{{iOS_App_Version}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"{{new_account_email}}\",\n\t\"password\": \"{{Password}}\",\n\t\"nickname\": \"Olga's test\",\n    \"localDate\": \"2023-11-01T13:26:54.28Z\",\n\t\"appstoreLocation\": \"USA\"\n}\n"
+						},
+						"url": "{{BASE_URL}}api/v1/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "a4c7b0f7-4b12-4c39-a58e-a157280d979f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "c2deb997-eae5-4994-a608-2b94b4e3bae7"
 		},
 		{
