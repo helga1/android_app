@@ -1079,6 +1079,12 @@
 									"});",
 									"",
 									"",
+									"var jsonData = pm.response.json();",
+									"var current_user_id= jsonData.user._id",
+									"console.log(current_user_id)",
+									"pm.environment.set(\"current_user_id\", current_user_id);",
+									"",
+									"",
 									"",
 									""
 								],
