@@ -1124,14 +1124,98 @@
 					"response": []
 				},
 				{
-					"name": "Peronalization",
-					"id": "a4c7b0f7-4b12-4c39-a58e-a157280d979f",
+					"name": "Personalization",
+					"id": "88ffe684-e9ed-46f6-a6e8-89180edbe7d6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzOSIsInNlc3Npb25JZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzYiIsInYiOjIsImlhdCI6MTY5ODg3MDQxNH0.yVNMEwnziVaiynWyJKTr6_luUPK-RqGvXyD0AqdPgVk"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9wZXJzb25hbGlzYXRpb24vc3VydmV5L29uYm9hcmRpbmciLCJleHAiOjE2OTg4NzA1OTd9.U_0DgT0R5Sj_LgpuxbyT-ockt39l7ZdkOKOzZjhnlhU"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"url": "https://api.dev.glorify-app.com/api/v2/personalisation/survey/onboarding"
+					},
+					"response": []
+				},
+				{
+					"name": "Personalization survey choise",
+					"id": "52813666-97a7-41d9-92ab-d8877c9afa7b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Host",
+								"value": "api.dev.glorify-app.com"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzOSIsInNlc3Npb25JZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzYiIsInYiOjIsImlhdCI6MTY5ODg3MDQxNH0.yVNMEwnziVaiynWyJKTr6_luUPK-RqGvXyD0AqdPgVk"
+							},
+							{
+								"key": "hash",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92Mi9wZXJzb25hbGlzYXRpb24vc3VydmV5IiwiZXhwIjoxNjk4ODcwNjI1fQ.YqaOrxGEBlzEORBxYc5Opfn07NcXXnp_kabgNkVUAnQ"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "app-agent",
+								"value": "android 13 glorify/2.44.0"
+							},
+							{
+								"key": "timezone",
+								"value": "-07:00"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "user-agent",
+								"value": "okhttp/5.0.0-alpha.10"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"surveyId\":\"64d54363e28317f262df5d96\",\"questions\":[{\"_id\":\"64d54361e28317f262df5d8b\",\"answers\":[{\"_id\":\"64d54361e28317f262df5d8d\",\"text\":\"My relationship with God is mainly personal & private\"}]},{\"_id\":\"64d54361e28317f262df5d8f\",\"answers\":[{\"_id\":\"64d54361e28317f262df5d92\",\"text\":\"Not familiar but familiar to Christianity\"}]}]}"
+						},
+						"url": "https://api.dev.glorify-app.com/api/v2/personalisation/survey"
 					},
 					"response": []
 				}
