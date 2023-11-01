@@ -1735,6 +1735,77 @@
 									"response": []
 								},
 								{
+									"name": "is session completed?",
+									"id": "6e76e9e3-367b-41d0-9d11-b8914930f788",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Host",
+												"value": "api.dev.glorify-app.com"
+											},
+											{
+												"key": "authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzOSIsInNlc3Npb25JZCI6IjY1NDJiNDhlMjAwOWJmMGQxNTBmMGUzYiIsInYiOjIsImlhdCI6MTY5ODg3MDQxNH0.yVNMEwnziVaiynWyJKTr6_luUPK-RqGvXyD0AqdPgVk"
+											},
+											{
+												"key": "hash",
+												"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwLXVzZXItc2Vzc2lvbi9jb21wbGV0ZWQiLCJleHAiOjE2OTg4NzA2NDl9.EpxORnsDXzmV15zRx01CjwSTta3L4ja1gGDrj1KbLTY"
+											},
+											{
+												"key": "content-type",
+												"value": "application/json"
+											},
+											{
+												"key": "accept-language",
+												"value": "en"
+											},
+											{
+												"key": "app-agent",
+												"value": "android 13 glorify/2.44.0"
+											},
+											{
+												"key": "timezone",
+												"value": "-07:00"
+											},
+											{
+												"key": "user-agent",
+												"value": "okhttp/5.0.0-alpha.10"
+											}
+										],
+										"url": {
+											"raw": "https://api.dev.glorify-app.com/api/v3/daily-worship-user-session/completed?start=2023-11-01&end=2023-11-01",
+											"protocol": "https",
+											"host": [
+												"api",
+												"dev",
+												"glorify-app",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship-user-session",
+												"completed"
+											],
+											"query": [
+												{
+													"key": "start",
+													"value": "2023-11-01"
+												},
+												{
+													"key": "end",
+													"value": "2023-11-01"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "open Daily worship",
 									"id": "487175ab-c76b-41fc-94c1-b24c6349e46a",
 									"protocolProfileBehavior": {
