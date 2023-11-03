@@ -4298,9 +4298,1614 @@
 			"description": "Registration of Enflish lng User , personalization and finishing the daily session."
 		},
 		{
-			"name": "iOS Happy Path",
-			"item": [],
-			"id": "919019d3-2651-4c9c-91af-eda9e2fc58bc"
+			"name": "DAILY WORSHIP INFO",
+			"item": [
+				{
+					"name": "healthcheck",
+					"item": [
+						{
+							"name": "Daily Worship Controller healthcheck",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3916bfe3-4441-4c3f-96b7-3a6c514667a6",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "6e141cdf-6f68-4c04-a1d0-cab7f3bebb92",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BASE_URL}}/api/v3/daily-worship/healthcheck"
+							},
+							"response": [
+								{
+									"id": "09bffb8e-7c3e-48c9-80d0-10352fa20620",
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v3/daily-worship/healthcheck"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "557836d2-1264-4c0d-9a12-861ed9908d17"
+				},
+				{
+					"name": "daily-worship-info",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Daily Worship Controller get By Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e3733327-3801-446d-88a9-875c3f9c1841",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"//verify Daily Worship contains passage",
+													"",
+													"//verify Daily Worship contains story",
+													"",
+													"//verify Daily Worship contains Daily Quote",
+													"",
+													"//verify Daily Worship status is published",
+													"",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "8a197f8c-7652-4f38-806d-80721d3742b3",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Host",
+												"value": "api.dev.glorify-app.com"
+											},
+											{
+												"key": "authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+											},
+											{
+												"key": "hash",
+												"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
+											},
+											{
+												"key": "content-type",
+												"value": "application/json"
+											},
+											{
+												"key": "accept-language",
+												"value": "en"
+											},
+											{
+												"key": "app-agent",
+												"value": "android 13 glorify/2.44.0"
+											},
+											{
+												"key": "timezone",
+												"value": "-07:00"
+											},
+											{
+												"key": "user-agent",
+												"value": "okhttp/5.0.0-alpha.10"
+											}
+										],
+										"url": {
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info/:id",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship",
+												"daily-worship-info",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{Daily_Session_ID}}",
+													"description": "(Required) ID of the resource"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "b6a52faf-861d-4507-8854-3a3c7284ea12",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship/daily-worship-info/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship",
+														"daily-worship-info",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "9843f11b-b345-4928-8aab-95e8ca5b1365"
+						},
+						{
+							"name": "Daily Worship Controller get By Date",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c2fb148b-8308-4a22-8ac7-067d5a206a81",
+										"exec": [
+											"//set the daily session id for Daily Worship info by id request",
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"Daily_Session_ID\", jsonData.dailyWorshipInfo._id);",
+											"",
+											"//Status of request",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"//Test the performance",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(250);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Verify  the first habit is DWWG\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[0].cardTitle).to.eql('Daily Walk with God');",
+											"});",
+											"pm.test(\"Verify  the first habit type is DWWG\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[0].habitType).to.eql('dailyWalkWithGod');",
+											"});",
+											"",
+											"",
+											"",
+											"pm.test(\"Verify  the second habit is Verse of the Day\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[1].cardTitle).to.eql('Verse of the Day');",
+											"});",
+											"",
+											"pm.test(\"Verify  Verse of the day has 'dailyQuote' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[1].habitType).to.eql('dailyQuote');",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											"pm.test(\"Verify  that third card is Daily Prayer \", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[2].cardTitle).to.eql('Daily Prayer');",
+											"});",
+											"",
+											"pm.test(\"Verify Daily Prayer card has 'story' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[2].habitType).to.eql('story');",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "37e95cc7-0ccb-4f17-ba9e-bf66958c4ae9",
+										"exec": [
+											"",
+											"let currentDate = new Date().toJSON().slice(0, 10);",
+											"",
+											"pm.environment.set(\"todays_date\", currentDate);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "c51dd063-33d0-4d92-a970-2872407fec1c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Host",
+										"value": "api.dev.glorify-app.com"
+									},
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+									},
+									{
+										"key": "hash",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "app-agent",
+										"value": "android 13 glorify/2.44.0"
+									},
+									{
+										"key": "timezone",
+										"value": "-07:00"
+									},
+									{
+										"key": "user-agent",
+										"value": "okhttp/5.0.0-alpha.10"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date={{todays_date}}&lang=en",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"daily-worship",
+										"daily-worship-info"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "{{todays_date}}",
+											"description": "(Required) Date in YYYY-MM-DD format"
+										},
+										{
+											"key": "lang",
+											"value": "en",
+											"description": "Language code (en, pt, es)"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "fd1b83ac-f9d7-415a-8c31-07fdcce69b4d",
+									"name": "Returns the daily worship information",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date=<string>&lang=<string>",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship",
+												"daily-worship-info"
+											],
+											"query": [
+												{
+													"key": "date",
+													"value": "<string>",
+													"description": "(Required) Date in YYYY-MM-DD format"
+												},
+												{
+													"key": "lang",
+													"value": "<string>",
+													"description": "Language code (en, pt, es)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "b0ef1a34-8fc1-48da-b4cf-a998a36e7cc6"
+				},
+				{
+					"name": "daily-worship-info SPANISH",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Daily Worship Controller get By Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e3733327-3801-446d-88a9-875c3f9c1841",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"//verify Daily Worship contains passage",
+													"",
+													"//verify Daily Worship contains story",
+													"",
+													"//verify Daily Worship contains Daily Quote",
+													"",
+													"//verify Daily Worship status is published",
+													"",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "3880064d-2fb8-415c-b0d5-46783b34b475",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Host",
+												"value": "api.dev.glorify-app.com"
+											},
+											{
+												"key": "authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+											},
+											{
+												"key": "hash",
+												"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
+											},
+											{
+												"key": "content-type",
+												"value": "application/json"
+											},
+											{
+												"key": "accept-language",
+												"value": "en"
+											},
+											{
+												"key": "app-agent",
+												"value": "android 13 glorify/2.44.0"
+											},
+											{
+												"key": "timezone",
+												"value": "-07:00"
+											},
+											{
+												"key": "user-agent",
+												"value": "okhttp/5.0.0-alpha.10"
+											}
+										],
+										"url": {
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info/:id",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship",
+												"daily-worship-info",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "1a2e801e-eb69-4823-86de-4defb89cee3f",
+													"key": "id",
+													"value": "{{Daily_Session_ID}}",
+													"description": "(Required) ID of the resource"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "dce06eaf-0e90-49b1-b58a-07eefd8533ce",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship/daily-worship-info/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship",
+														"daily-worship-info",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": null,
+											"cookie": [],
+											"responseTime": null,
+											"body": null
+										}
+									]
+								}
+							],
+							"id": "80c790b4-e590-4488-8376-553efc4b47c5"
+						},
+						{
+							"name": "Daily Worship Controller get By Date",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c2fb148b-8308-4a22-8ac7-067d5a206a81",
+										"exec": [
+											"//set the daily session id for Daily Worship info by id request",
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"Daily_Session_ID\", jsonData.dailyWorshipInfo._id);",
+											"",
+											"//Status of request",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"//Test the performance",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(250);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Verify  the first habit is Passagem\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[0].cardTitle).to.eql('Passagem');",
+											"});",
+											"pm.test(\"Verify  the first habit type is passage\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[0].habitType).to.eql('passage');",
+											"});",
+											"",
+											"",
+											"",
+											"pm.test(\"Verify  the second habit is Devocional\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[1].cardTitle).to.eql('Devocional');",
+											"});",
+											"",
+											"pm.test(\"Verify  Devocional has 'devotional' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[1].habitType).to.eql('devotional');",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											"pm.test(\"Verify  that third card is Citação Diária \", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[2].cardTitle).to.eql('Citação Diária');",
+											"});",
+											"",
+											"pm.test(\"Verify Daily Prayer card has 'story' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[2].habitType).to.eql('dailyQuote');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Verify  that forth card is Oração \", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[3].cardTitle).to.eql('Oração');",
+											"});",
+											"",
+											"pm.test(\"Verify Daily Prayer card has 'story' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[3].habitType).to.eql('story');",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "37e95cc7-0ccb-4f17-ba9e-bf66958c4ae9",
+										"exec": [
+											"",
+											"let currentDate = new Date().toJSON().slice(0, 10);",
+											"",
+											"pm.environment.set(\"todays_date\", currentDate);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "9684ddf0-bb86-47b9-be9f-ee6a2a311332",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Host",
+										"value": "api.dev.glorify-app.com"
+									},
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+									},
+									{
+										"key": "hash",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "app-agent",
+										"value": "android 13 glorify/2.44.0"
+									},
+									{
+										"key": "timezone",
+										"value": "-07:00"
+									},
+									{
+										"key": "user-agent",
+										"value": "okhttp/5.0.0-alpha.10"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date={{todays_date}}&lang=pt",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"daily-worship",
+										"daily-worship-info"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "{{todays_date}}",
+											"description": "(Required) Date in YYYY-MM-DD format"
+										},
+										{
+											"key": "lang",
+											"value": "pt",
+											"description": "Language code (en, pt, es)"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "4516abaa-17ad-4026-9a4a-420406304728",
+									"name": "Returns the daily worship information",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date=<string>&lang=<string>",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship",
+												"daily-worship-info"
+											],
+											"query": [
+												{
+													"key": "date",
+													"value": "<string>",
+													"description": "(Required) Date in YYYY-MM-DD format"
+												},
+												{
+													"key": "lang",
+													"value": "<string>",
+													"description": "Language code (en, pt, es)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": null,
+									"cookie": [],
+									"responseTime": null,
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "17e24a5b-efcf-4c81-a501-73c285d92672"
+				}
+			],
+			"id": "aded05a0-ea31-44da-a95a-776edf7cb7c1"
+		},
+		{
+			"name": "v3 Copy",
+			"item": [
+				{
+					"name": "daily-worship",
+					"item": [
+						{
+							"name": "tree-stats",
+							"item": [
+								{
+									"name": "Daily Worship Controller get Tree Stats",
+									"id": "fa356c40-a504-42f9-b1e6-648e241404d9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/daily-worship/tree-stats?date=<string>&localDate=<string>&includeAllStats=<boolean>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship",
+												"tree-stats"
+											],
+											"query": [
+												{
+													"description": "(Required) Date in YYYY-MM-DD format",
+													"key": "date",
+													"value": "<string>"
+												},
+												{
+													"description": "(Required) Local Date in YYYY-MM-DD format",
+													"key": "localDate",
+													"value": "<string>"
+												},
+												{
+													"description": "Include all stats",
+													"key": "includeAllStats",
+													"value": "<boolean>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "eafb36ff-23f4-4c30-a1cb-553eb1227986",
+											"name": "Returns tree stats",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship/tree-stats?date=<string>&localDate=<string>&includeAllStats=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship",
+														"tree-stats"
+													],
+													"query": [
+														{
+															"description": "(Required) Date in YYYY-MM-DD format",
+															"key": "date",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) Local Date in YYYY-MM-DD format",
+															"key": "localDate",
+															"value": "<string>"
+														},
+														{
+															"description": "Include all stats",
+															"key": "includeAllStats",
+															"value": "<boolean>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "5eedd5a2-01a6-4c1d-96fc-d98acb087fe0"
+						},
+						{
+							"name": "passage",
+							"item": [
+								{
+									"name": "Daily Worship Controller get Passage Name",
+									"id": "e421f1d0-6ec0-4762-b557-cde1c2635ba8",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/daily-worship/passage?date=<string>&lang=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship",
+												"passage"
+											],
+											"query": [
+												{
+													"description": "(Required) Date in YYYY-MM-DD format",
+													"key": "date",
+													"value": "<string>"
+												},
+												{
+													"description": "Language code (en, pt, es)",
+													"key": "lang",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "44294f6c-9570-4720-975d-b3cf78e3e213",
+											"name": "Returns the passage information",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship/passage?date=<string>&lang=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship",
+														"passage"
+													],
+													"query": [
+														{
+															"description": "(Required) Date in YYYY-MM-DD format",
+															"key": "date",
+															"value": "<string>"
+														},
+														{
+															"description": "Language code (en, pt, es)",
+															"key": "lang",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "28a64de2-216b-40ce-a078-57639d76354d"
+						}
+					],
+					"id": "e4ba6a38-0180-4d9e-982c-c182bc5bb000"
+				},
+				{
+					"name": "daily-worship-user-session",
+					"item": [
+						{
+							"name": "completed",
+							"item": [
+								{
+									"name": "Get Completed Sessions in a Date Range",
+									"id": "1ca856f2-115c-4d58-965e-b3c79aab55d1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/completed?start=<string>&end=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship-user-session",
+												"completed"
+											],
+											"query": [
+												{
+													"description": "(Required) Start in YYYY-MM-DD format",
+													"key": "start",
+													"value": "<string>"
+												},
+												{
+													"description": "(Required) End Date in YYYY-MM-DD format",
+													"key": "end",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "d8be1598-66e7-43db-9dfc-547937b79e1f",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/completed?start=<string>&end=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship-user-session",
+														"completed"
+													],
+													"query": [
+														{
+															"description": "(Required) Start in YYYY-MM-DD format",
+															"key": "start",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) End Date in YYYY-MM-DD format",
+															"key": "end",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "f94f08b9-ee6f-4e2b-aa11-3327aef70df3"
+						},
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get User Session",
+									"id": "b3015834-dec4-4c89-b44e-2a9153dfe38b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship-user-session",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "4e2eb7da-0d03-43aa-a544-395533951ff5",
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) User Daily Session ID"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "a33b31a0-f06b-4d44-94c5-a72a85538edf",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship-user-session",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update User Session",
+									"id": "1913144a-2de6-4437-a849-0f52802482ab",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Examples: ios 16.4 glorify/2.57.0, android 13 glorify/2.37.0",
+												"key": "App-Agent",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"localDate\": \"<string>\",\n  \"habits\": [\n    {\n      \"type\": \"<string>\",\n      \"isCompleted\": \"<boolean>\",\n      \"_id\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"isCompleted\": \"<boolean>\",\n      \"_id\": \"<string>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship-user-session",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "f55446e9-fbcb-4bb7-ab2d-4f0b79f5f45f",
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "e1f048dd-1ceb-49b3-844e-f84deb2bf7bd",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Examples: ios 16.4 glorify/2.57.0, android 13 glorify/2.37.0",
+														"key": "App-Agent",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"localDate\": \"<string>\",\n  \"habits\": [\n    {\n      \"type\": \"<string>\",\n      \"isCompleted\": \"<boolean>\",\n      \"_id\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"isCompleted\": \"<boolean>\",\n      \"_id\": \"<string>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship-user-session",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete User Session",
+									"id": "20e127ff-90b9-4d25-8149-f1538efa069a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship-user-session",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "2dbb01bc-7e23-4368-8f28-91ecbb11fb51",
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) User Daily Session ID"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "ec11b6ff-cfa7-4d86-9748-12147dacb969",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship-user-session",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "58ad4578-1ecd-4a30-a781-612b3a5aa1a7"
+						},
+						{
+							"name": "user",
+							"item": [
+								{
+									"name": "stats",
+									"item": [
+										{
+											"name": "Get User Stats",
+											"id": "472bd666-7b2d-4208-85af-d8492f45ba5e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/user/stats?start=<string>&end=<string>&localDate=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"daily-worship-user-session",
+														"user",
+														"stats"
+													],
+													"query": [
+														{
+															"description": "(Required) Start in YYYY-MM-DD format",
+															"key": "start",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) End Date in YYYY-MM-DD format",
+															"key": "end",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) Local Date",
+															"key": "localDate",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "9d22decc-879e-4d4a-99b1-e5c0b89141f4",
+													"name": "Returns user stats",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v3/daily-worship-user-session/user/stats?start=<string>&end=<string>&localDate=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v3",
+																"daily-worship-user-session",
+																"user",
+																"stats"
+															],
+															"query": [
+																{
+																	"description": "(Required) Start in YYYY-MM-DD format",
+																	"key": "start",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) End Date in YYYY-MM-DD format",
+																	"key": "end",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) Local Date",
+																	"key": "localDate",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "6a035bb2-243f-4472-97ba-4387e02d3c9f"
+								}
+							],
+							"id": "d2f57d7a-db7c-4ff3-a0bd-2f380d389d3e"
+						},
+						{
+							"name": "Create User Session",
+							"id": "95d70029-cda2-4140-9fde-a965deebe73b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"lang\": \"<string>\",\n  \"date\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/v3/daily-worship-user-session"
+							},
+							"response": [
+								{
+									"id": "9d9c2a18-6292-427c-a8f5-e521ff98984b",
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"lang\": \"<string>\",\n  \"date\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v3/daily-worship-user-session"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "6b6b7193-c0fc-4ec9-8971-64052ddeb237"
+				},
+				{
+					"name": "personalisation",
+					"item": [
+						{
+							"name": "survey",
+							"item": [
+								{
+									"name": "{type}",
+									"item": [
+										{
+											"name": "Get a survey by type",
+											"id": "a0eab7cb-f413-4bcc-b13e-50c79b41a486",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/personalisation/survey/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"personalisation",
+														"survey",
+														":type"
+													],
+													"variable": [
+														{
+															"id": "b5a138d7-5900-4de3-9d55-b30bf2afb5d2",
+															"key": "type",
+															"value": "<string>",
+															"description": "(Required) Survey type"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "abfb5ff8-9a01-40c9-8a3f-cf9c0b61379d",
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v3/personalisation/survey/:type",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v3",
+																"personalisation",
+																"survey",
+																":type"
+															],
+															"variable": [
+																{
+																	"key": "type"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "012be36d-f780-4f15-8ac0-b01c2d3fc5d5"
+								},
+								{
+									"name": "Submit a Completed Survey",
+									"id": "1128fa51-59ba-4b0a-8c9c-be45e4f96cda",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"surveyId\": \"<string>\",\n  \"questions\": [\n    {\n      \"_id\": \"<string>\",\n      \"answers\": [\n        {\n          \"_id\": \"<string>\"\n        },\n        {\n          \"_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"_id\": \"<string>\",\n      \"answers\": [\n        {\n          \"_id\": \"<string>\"\n        },\n        {\n          \"_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v3/personalisation/survey"
+									},
+									"response": [
+										{
+											"id": "515dcd70-ad4e-499c-b809-91696c667afa",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"surveyId\": \"<string>\",\n  \"questions\": [\n    {\n      \"_id\": \"<string>\",\n      \"answers\": [\n        {\n          \"_id\": \"<string>\"\n        },\n        {\n          \"_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"_id\": \"<string>\",\n      \"answers\": [\n        {\n          \"_id\": \"<string>\"\n        },\n        {\n          \"_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v3/personalisation/survey"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "b26a9d7b-1cae-4050-8ef2-f7cc3294cc04"
+						}
+					],
+					"id": "f46ef08d-f1ad-41ec-b3c6-0b8edec2078d"
+				},
+				{
+					"name": "content",
+					"item": [
+						{
+							"name": "content-manager-media-webhook",
+							"item": [
+								{
+									"name": "Strapi Media Webhook",
+									"id": "56dfa1be-ce1d-4b89-a382-a46881d127fa",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"event\": \"<string>\",\n  \"createdAt\": \"<string>\",\n  \"media\": {}\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v3/content/content-manager-media-webhook"
+									},
+									"response": [
+										{
+											"id": "a218ff3c-4217-4ebd-b56f-0bb0ab11a3a9",
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"event\": \"<string>\",\n  \"createdAt\": \"<string>\",\n  \"media\": {}\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v3/content/content-manager-media-webhook"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "5f770f63-ef04-40c3-a8fb-9e4907c29a28"
+						}
+					],
+					"id": "a2c09ce9-6790-44f9-a2bf-023280519ebe"
+				}
+			],
+			"id": "54b1d266-219b-4056-a217-2741b2ff887b"
 		}
 	]
 }
