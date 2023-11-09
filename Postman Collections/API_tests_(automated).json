@@ -4483,7 +4483,7 @@
 							"id": "9843f11b-b345-4928-8aab-95e8ca5b1365"
 						},
 						{
-							"name": "Daily Worship Controller get By Date",
+							"name": "Daily Worship Controller get By Date (Before we returned DQ and Passage)",
 							"event": [
 								{
 									"listen": "test",
@@ -4606,7 +4606,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date={{todays_date}}&lang=en",
+									"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date=2023-11-01&lang=en",
 									"host": [
 										"{{BASE_URL}}"
 									],
@@ -4619,7 +4619,7 @@
 									"query": [
 										{
 											"key": "date",
-											"value": "{{todays_date}}",
+											"value": "2023-11-01",
 											"description": "(Required) Date in YYYY-MM-DD format"
 										},
 										{
@@ -4669,6 +4669,222 @@
 									"cookie": [],
 									"responseTime": null,
 									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Daily Worship Controller get By Date (Before date A) Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c2fb148b-8308-4a22-8ac7-067d5a206a81",
+										"exec": [
+											"//set the daily session id for Daily Worship info by id request",
+											"var jsonData = pm.response.json();",
+											"pm.environment.set(\"Daily_Session_ID\", jsonData.dailyWorshipInfo._id);",
+											"",
+											"//Status of request",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"//Test the performance",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(250);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Verify  the first habit is DWWG\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[0].cardTitle).to.eql('Daily Walk with God');",
+											"});",
+											"pm.test(\"Verify  the first habit type is DWWG\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[0].habitType).to.eql('dailyWalkWithGod');",
+											"});",
+											"pm.test(\"Verify  theDWWG order index\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[0].orderIndex).to.eql(3);",
+											"});",
+											"",
+											"",
+											"",
+											"pm.test(\"Verify  the second habit is Passage\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[1].cardTitle).to.eql('Passage');",
+											"});",
+											"",
+											"pm.test(\"Verify  Verse of the day has 'dailyQuote' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[1].habitType).to.eql('passage');",
+											"});",
+											"pm.test(\"Verify the Passage order index\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[1].orderIndex).to.eql(1);",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											"pm.test(\"Verify  that third card is Devotional \", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[2].cardTitle).to.eql('Devotional');",
+											"});",
+											"",
+											"pm.test(\"Verify Devotionalcard has 'devotional' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[2].habitType).to.eql('devotional');",
+											"});",
+											"pm.test(\"Verify Devotionalorder index\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[2].orderIndex).to.eql(2);",
+											"});",
+											"",
+											"pm.test(\"Verify  Daily Quote \", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[3].cardTitle).to.eql('Daily Quote');",
+											"});",
+											"",
+											"pm.test(\"Verify Daily Quote has 'dailyQuote' habit type\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[3].habitType).to.eql('dailyQuote');",
+											"});",
+											"pm.test(\"Verify Daily Quote index\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.dailyWorshipInfo.cards[3].orderIndex).to.eql(0);",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "37e95cc7-0ccb-4f17-ba9e-bf66958c4ae9",
+										"exec": [
+											"",
+											"let currentDate = new Date().toJSON().slice(0, 10);",
+											"",
+											"pm.environment.set(\"todays_date\", currentDate);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "d06e3e47-315d-4bc8-bd66-ed28e1d48bcd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Host",
+										"value": "api.dev.glorify-app.com"
+									},
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+									},
+									{
+										"key": "hash",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "app-agent",
+										"value": "android 13 glorify/2.44.0"
+									},
+									{
+										"key": "timezone",
+										"value": "-07:00"
+									},
+									{
+										"key": "user-agent",
+										"value": "okhttp/5.0.0-alpha.10"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date={{todays_date}}&lang=en",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"daily-worship",
+										"daily-worship-info"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "{{todays_date}}",
+											"description": "(Required) Date in YYYY-MM-DD format"
+										},
+										{
+											"key": "lang",
+											"value": "en",
+											"description": "Language code (en, pt, es)"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "d9b2acbd-b870-44a5-8a1e-f7051c368e05",
+									"name": "Returns the daily worship information",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date=<string>&lang=<string>",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"daily-worship",
+												"daily-worship-info"
+											],
+											"query": [
+												{
+													"key": "date",
+													"value": "<string>",
+													"description": "(Required) Date in YYYY-MM-DD format"
+												},
+												{
+													"key": "lang",
+													"value": "<string>",
+													"description": "Language code (en, pt, es)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": null,
+									"cookie": [],
+									"responseTime": null,
+									"body": null
 								}
 							]
 						}
