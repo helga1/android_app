@@ -1002,24 +1002,7 @@
 								"header": [],
 								"url": "{{BASE_URL}}/api/v3/daily-worship/healthcheck"
 							},
-							"response": [
-								{
-									"id": "09bffb8e-7c3e-48c9-80d0-10352fa20620",
-									"name": "Untitled Response",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/v3/daily-worship/healthcheck"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"responseTime": null,
-									"body": ""
-								}
-							]
+							"response": []
 						}
 					],
 					"id": "557836d2-1264-4c0d-9a12-861ed9908d17"
@@ -1117,41 +1100,7 @@
 											]
 										}
 									},
-									"response": [
-										{
-											"id": "b6a52faf-861d-4507-8854-3a3c7284ea12",
-											"name": "Untitled Response",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v3/daily-worship/daily-worship-info/:id",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v3",
-														"daily-worship",
-														"daily-worship-info",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
+									"response": []
 								}
 							],
 							"id": "9843f11b-b345-4928-8aab-95e8ca5b1365"
@@ -1304,47 +1253,7 @@
 									]
 								}
 							},
-							"response": [
-								{
-									"id": "fd1b83ac-f9d7-415a-8c31-07fdcce69b4d",
-									"name": "Returns the daily worship information",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date=<string>&lang=<string>",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"api",
-												"v3",
-												"daily-worship",
-												"daily-worship-info"
-											],
-											"query": [
-												{
-													"key": "date",
-													"value": "<string>",
-													"description": "(Required) Date in YYYY-MM-DD format"
-												},
-												{
-													"key": "lang",
-													"value": "<string>",
-													"description": "Language code (en, pt, es)"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"responseTime": null,
-									"body": ""
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Daily Worship Controller get By Date (After we returned DQ and Passage)",
@@ -1520,47 +1429,7 @@
 									]
 								}
 							},
-							"response": [
-								{
-									"id": "d9b2acbd-b870-44a5-8a1e-f7051c368e05",
-									"name": "Returns the daily worship information",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info?date=<string>&lang=<string>",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"api",
-												"v3",
-												"daily-worship",
-												"daily-worship-info"
-											],
-											"query": [
-												{
-													"key": "date",
-													"value": "<string>",
-													"description": "(Required) Date in YYYY-MM-DD format"
-												},
-												{
-													"key": "lang",
-													"value": "<string>",
-													"description": "Language code (en, pt, es)"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": null,
-									"cookie": [],
-									"responseTime": null,
-									"body": null
-								}
-							]
+							"response": []
 						}
 					],
 					"id": "b0ef1a34-8fc1-48da-b4cf-a998a36e7cc6"
