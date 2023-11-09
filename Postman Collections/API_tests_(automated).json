@@ -1347,7 +1347,7 @@
 							]
 						},
 						{
-							"name": "Daily Worship Controller get By Date (Before date A) Copy",
+							"name": "Daily Worship Controller get By Date (After we returned DQ and Passage)",
 							"event": [
 								{
 									"listen": "test",
@@ -2020,11 +2020,17 @@
 									},
 									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ",
+												"type": "text"
+											}
+										],
 										"url": {
-											"raw": "{{baseUrl}}/api/v3/daily-worship/passage?date=<string>&lang=<string>",
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/passage?date=2023-11-03&lang=2023-11-03",
 											"host": [
-												"{{baseUrl}}"
+												"{{BASE_URL}}"
 											],
 											"path": [
 												"api",
@@ -2034,14 +2040,14 @@
 											],
 											"query": [
 												{
-													"description": "(Required) Date in YYYY-MM-DD format",
 													"key": "date",
-													"value": "<string>"
+													"value": "2023-11-03",
+													"description": "(Required) Date in YYYY-MM-DD format"
 												},
 												{
-													"description": "Language code (en, pt, es)",
 													"key": "lang",
-													"value": "<string>"
+													"value": "2023-11-03",
+													"description": "Language code (en, pt, es)"
 												}
 											]
 										}
