@@ -1011,101 +1011,6 @@
 					"name": "daily-worship-info",
 					"item": [
 						{
-							"name": "{id}",
-							"item": [
-								{
-									"name": "Daily Worship Controller get By Id",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "e3733327-3801-446d-88a9-875c3f9c1841",
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													"",
-													"//verify Daily Worship contains passage",
-													"",
-													"//verify Daily Worship contains story",
-													"",
-													"//verify Daily Worship contains Daily Quote",
-													"",
-													"//verify Daily Worship status is published",
-													"",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "8a197f8c-7652-4f38-806d-80721d3742b3",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Host",
-												"value": "api.dev.glorify-app.com"
-											},
-											{
-												"key": "authorization",
-												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
-											},
-											{
-												"key": "hash",
-												"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
-											},
-											{
-												"key": "content-type",
-												"value": "application/json"
-											},
-											{
-												"key": "accept-language",
-												"value": "en"
-											},
-											{
-												"key": "app-agent",
-												"value": "android 13 glorify/2.44.0"
-											},
-											{
-												"key": "timezone",
-												"value": "-07:00"
-											},
-											{
-												"key": "user-agent",
-												"value": "okhttp/5.0.0-alpha.10"
-											}
-										],
-										"url": {
-											"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info/:id",
-											"host": [
-												"{{BASE_URL}}"
-											],
-											"path": [
-												"api",
-												"v3",
-												"daily-worship",
-												"daily-worship-info",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "{{Daily_Session_ID}}",
-													"description": "(Required) ID of the resource"
-												}
-											]
-										}
-									},
-									"response": []
-								}
-							],
-							"id": "9843f11b-b345-4928-8aab-95e8ca5b1365"
-						},
-						{
 							"name": "Daily Worship Controller get By Date (Before we returned DQ and Passage)",
 							"event": [
 								{
@@ -1425,6 +1330,95 @@
 											"key": "lang",
 											"value": "en",
 											"description": "Language code (en, pt, es)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Daily Worship Controller get By Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e3733327-3801-446d-88a9-875c3f9c1841",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"//verify Daily Worship contains passage",
+											"",
+											"//verify Daily Worship contains story",
+											"",
+											"//verify Daily Worship contains Daily Quote",
+											"",
+											"//verify Daily Worship status is published",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "8a197f8c-7652-4f38-806d-80721d3742b3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Host",
+										"value": "api.dev.glorify-app.com"
+									},
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ"
+									},
+									{
+										"key": "hash",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJwYXRoIjoiL2FwaS92My9kYWlseS13b3JzaGlwL2RhaWx5LXdvcnNoaXAtaW5mbyIsImV4cCI6MTY5ODg3ODQ0MH0.BxDEektnIZdJCy6lcxPrnHiUecD1OIRtkNWAHNTu2d4"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "app-agent",
+										"value": "android 13 glorify/2.44.0"
+									},
+									{
+										"key": "timezone",
+										"value": "-07:00"
+									},
+									{
+										"key": "user-agent",
+										"value": "okhttp/5.0.0-alpha.10"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/v3/daily-worship/daily-worship-info/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"daily-worship",
+										"daily-worship-info",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{Daily_Session_ID}}",
+											"description": "(Required) ID of the resource"
 										}
 									]
 								}
@@ -1785,6 +1779,24 @@
 							"item": [
 								{
 									"name": "Daily Worship Controller get Tree Stats",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "344a49f8-0d72-46f2-b566-8534da1e5c5c",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"id": "fa356c40-a504-42f9-b1e6-648e241404d9",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -1799,7 +1811,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{BASE_URL}}/api/v3/daily-worship/tree-stats?date=2023-11-09&localDate=2023-11-09&includeAllStats=true",
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/tree-stats?date={{todays_date}}&localDate={{todays_date}}&includeAllStats=true",
 											"host": [
 												"{{BASE_URL}}"
 											],
@@ -1812,12 +1824,12 @@
 											"query": [
 												{
 													"key": "date",
-													"value": "2023-11-09",
+													"value": "{{todays_date}}",
 													"description": "(Required) Date in YYYY-MM-DD format"
 												},
 												{
 													"key": "localDate",
-													"value": "2023-11-09",
+													"value": "{{todays_date}}",
 													"description": "(Required) Local Date in YYYY-MM-DD format"
 												},
 												{
@@ -1828,52 +1840,7 @@
 											]
 										}
 									},
-									"response": [
-										{
-											"id": "eafb36ff-23f4-4c30-a1cb-553eb1227986",
-											"name": "Returns tree stats",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v3/daily-worship/tree-stats?date=<string>&localDate=<string>&includeAllStats=<boolean>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v3",
-														"daily-worship",
-														"tree-stats"
-													],
-													"query": [
-														{
-															"description": "(Required) Date in YYYY-MM-DD format",
-															"key": "date",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) Local Date in YYYY-MM-DD format",
-															"key": "localDate",
-															"value": "<string>"
-														},
-														{
-															"description": "Include all stats",
-															"key": "includeAllStats",
-															"value": "<boolean>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
+									"response": []
 								}
 							],
 							"id": "5eedd5a2-01a6-4c1d-96fc-d98acb087fe0"
@@ -1883,6 +1850,23 @@
 							"item": [
 								{
 									"name": "Daily Worship Controller get Passage Name",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "015d9bbd-9c74-4803-8bfa-098496bde4d5",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"id": "e421f1d0-6ec0-4762-b557-cde1c2635ba8",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -1897,7 +1881,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{BASE_URL}}/api/v3/daily-worship/passage?date=2023-11-03&lang=2023-11-03",
+											"raw": "{{BASE_URL}}/api/v3/daily-worship/passage?date={{todays_date}}&lang=pt",
 											"host": [
 												"{{BASE_URL}}"
 											],
@@ -1910,58 +1894,18 @@
 											"query": [
 												{
 													"key": "date",
-													"value": "2023-11-03",
+													"value": "{{todays_date}}",
 													"description": "(Required) Date in YYYY-MM-DD format"
 												},
 												{
 													"key": "lang",
-													"value": "2023-11-03",
+													"value": "pt",
 													"description": "Language code (en, pt, es)"
 												}
 											]
 										}
 									},
-									"response": [
-										{
-											"id": "44294f6c-9570-4720-975d-b3cf78e3e213",
-											"name": "Returns the passage information",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v3/daily-worship/passage?date=<string>&lang=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v3",
-														"daily-worship",
-														"passage"
-													],
-													"query": [
-														{
-															"description": "(Required) Date in YYYY-MM-DD format",
-															"key": "date",
-															"value": "<string>"
-														},
-														{
-															"description": "Language code (en, pt, es)",
-															"key": "lang",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
+									"response": []
 								}
 							],
 							"id": "28a64de2-216b-40ce-a078-57639d76354d"
