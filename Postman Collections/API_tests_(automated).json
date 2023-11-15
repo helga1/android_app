@@ -967,6 +967,194 @@
 						}
 					],
 					"id": "67e4cbce-08b8-444c-8821-beca9898ab4d"
+				},
+				{
+					"name": "Login with phone",
+					"item": [
+						{
+							"name": "phone auth - request code Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "80abf144-7ca9-4d79-be8b-ab75aa52d05a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8721a8e3-d05b-4527-b085-75446072dfb9",
+										"exec": [
+											"// JWT generation script adapted from",
+											"// https://gist.github.com/corbanb/db03150abbe899285d6a86cc480f674d",
+											"",
+											"var jwtSecret = pm.globals.get('jwt_hash') || ''",
+											"",
+											"// Set headers for JWT",
+											"var header = {",
+											"\t'typ': 'JWT',",
+											"\t'alg': 'HS256'",
+											"};",
+											"",
+											"// Prepare timestamp in seconds",
+											"var currentTimestamp = Math.floor(Date.now() / 1000)",
+											"",
+											"var data = {",
+											"\t'path': \"/\" + pm.request.url.toString().slice(12),",
+											"\t'exp': currentTimestamp + 180, // expiry time is 30 seconds from time of creation",
+											"}",
+											"",
+											"",
+											"function base64url(source) {",
+											"    // Encode in classical base64",
+											"    encodedSource = CryptoJS.enc.Base64.stringify(source)",
+											"    ",
+											"    // Remove padding equal characters",
+											"    encodedSource = encodedSource.replace(/=+$/, '')",
+											"    ",
+											"    // Replace characters according to base64url specifications",
+											"    encodedSource = encodedSource.replace(/\\+/g, '-')",
+											"    encodedSource = encodedSource.replace(/\\//g, '_')",
+											"    ",
+											"    return encodedSource",
+											"}",
+											"",
+											"// encode header",
+											"var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header))",
+											"var encodedHeader = base64url(stringifiedHeader)",
+											"",
+											"// encode data",
+											"var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify(data))",
+											"var encodedData = base64url(stringifiedData)",
+											"",
+											"// build token",
+											"var token = `${encodedHeader}.${encodedData}`",
+											"",
+											"// sign token",
+											"var signature = CryptoJS.HmacSHA256(token, jwtSecret)",
+											"signature = base64url(signature)",
+											"var signedToken = `${token}.${signature}`",
+											"",
+											"pm.environment.set('hash', signedToken)",
+											"pm.request.headers.add(signedToken, 'hash')",
+											"console.log('Signed and encoded JWT', signedToken)",
+											"console.log('Data: \\n', data)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "26225c41-07d1-4329-ad59-79e60ce9cf82",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "android 13 glorify/2.42.0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\": \"+1323-337-2292\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v2/users/verification/phone"
+							},
+							"response": []
+						},
+						{
+							"name": "phone auth - verify code Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82791925-d307-4843-8a5b-cab820ac7afd",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"userToken\", jsonData[\"authToken\"]);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "506238bc-ddee-45d0-a1ef-ac78367d1181",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "android 13 glorify/2.42.0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\": \"+1323-337-2292\",\n    \"code\": \"0000\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v2/users/verification/phone"
+							},
+							"response": []
+						},
+						{
+							"name": "phone auth - verify code & register Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"userToken\", jsonData[\"authToken\"]);"
+										],
+										"type": "text/javascript",
+										"id": "c7d0775b-510f-489f-9fc2-10bcfe4a651b"
+									}
+								}
+							],
+							"id": "15696166-a8cd-401c-ac1b-d89fdae58d76",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "App-Agent",
+										"value": "ios 13.0 glorify/2.20",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\": \"+40745539920\",\n    \"code\": \"0000\",\n    \"nickname\": \"arrrri\",\n    \"email\": \"ari++@test.com\"\n}\n"
+								},
+								"url": "{{BASE_URL}}api/v2/users/verification/phone"
+							},
+							"response": []
+						}
+					],
+					"id": "f2a6a9f5-3c8f-4cec-b56e-a7007973abf9"
 				}
 			],
 			"id": "69e6aada-afc4-4aed-a821-2840668b6d8b"
