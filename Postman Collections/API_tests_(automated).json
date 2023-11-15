@@ -1119,12 +1119,12 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "c7d0775b-510f-489f-9fc2-10bcfe4a651b",
 										"exec": [
 											"var jsonData = JSON.parse(responseBody);",
 											"postman.setEnvironmentVariable(\"userToken\", jsonData[\"authToken\"]);"
 										],
-										"type": "text/javascript",
-										"id": "c7d0775b-510f-489f-9fc2-10bcfe4a651b"
+										"type": "text/javascript"
 									}
 								}
 							],
@@ -1141,13 +1141,13 @@
 									},
 									{
 										"key": "App-Agent",
-										"value": "ios 13.0 glorify/2.20",
+										"value": "android 13 glorify/2.42.0",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"+40745539920\",\n    \"code\": \"0000\",\n    \"nickname\": \"arrrri\",\n    \"email\": \"ari++@test.com\"\n}\n"
+									"raw": "{\n\t\"phone\": \"+1323-337-2298\",\n    \"code\": \"0000\",\n    \"nickname\": \"arrrri\",\n    \"email\": \"arip+@test.com\"\n}\n"
 								},
 								"url": "{{BASE_URL}}api/v2/users/verification/phone"
 							},
