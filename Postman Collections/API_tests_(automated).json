@@ -2865,7 +2865,7 @@
 																],
 																"body": {
 																	"mode": "raw",
-																	"raw": "{\n  \"message\": \"Message by Group member\",\n  \"typeStory\": \"text\",\n  \"fontSize\": 12,\n  \"url\": \"https://file\",\n  \"duration\": 60\n}",
+																	"raw": "{\n\"message\": \"Message by Group member\",\n\"typeStory\": \"text\",\n\"fontSize\": 12,\n\"url\": \"https://file\",\n\"duration\": 60\n}",
 																	"options": {
 																		"raw": {
 																			"headerFamily": "json",
@@ -2888,7 +2888,7 @@
 																	"variable": [
 																		{
 																			"key": "spaceId",
-																			"value": "15b76d59-d9eb-4f93-89dc-b6f6d83e762f",
+																			"value": "c22ec4ee-9db4-45b7-96b0-005f9fff3c1e",
 																			"description": "(Required) space uuid"
 																		}
 																	]
