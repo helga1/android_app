@@ -2856,7 +2856,7 @@
 																	{
 																		"description": "(Required) example 507f191e810c19729de860ea",
 																		"key": "userId",
-																		"value": "<string>"
+																		"value": "550e8400-e29b-41d4-a716-446655440000"
 																	},
 																	{
 																		"key": "Content-Type",
@@ -2887,9 +2887,8 @@
 																	],
 																	"variable": [
 																		{
-																			"id": "ad084777-1832-4ece-a308-2a52dbb496e0",
 																			"key": "spaceId",
-																			"value": "afc406ed-b27e-49f1-824d-eab47a122fba",
+																			"value": "15b76d59-d9eb-4f93-89dc-b6f6d83e762f",
 																			"description": "(Required) space uuid"
 																		}
 																	]
