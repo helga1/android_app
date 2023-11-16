@@ -412,7 +412,7 @@
 			"name": "LOGIN",
 			"item": [
 				{
-					"name": "Login with enmail and password",
+					"name": "Login with email and password",
 					"item": [
 						{
 							"name": "Positive login",
