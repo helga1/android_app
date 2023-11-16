@@ -4822,7 +4822,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n\"groupId\":\"d93e1137-5515-4168-9ff9-2712f8735023\",\n\"name\": \"Test Group Olga\",\n\"thumbnailUrl\": \"https://glorify-app.com/wp-content/themes/glorify/dist/images/logo-glorify_d908f233.svg\",\n\"story\": {\n\"message\":\" \",\n\"typeStory\": \"text\",\n\"fontSize\": 12,\n\"url\": \"https://file\",\n\"duration\": 60\n}\n}\n",
+													"raw": "{\n\"groupId\":\"d93e1137-5515-4168-9ff9-2712f8735023\",\n\"name\": \"\",\n\"thumbnailUrl\": \"https://glorify-app.com/wp-content/themes/glorify/dist/images/logo-glorify_d908f233.svg\",\n\"story\": {\n\"message\":\" \",\n\"typeStory\": \"text\",\n\"fontSize\": 12,\n\"url\": \"https://file\",\n\"duration\": 60\n}\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -4907,6 +4907,168 @@
 												},
 												{
 													"id": "969bf55b-3735-469d-99ae-ddb4a3ac6c38",
+													"name": "You do not have permission to create a space.",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "userId",
+																"value": "<string>",
+																"description": "(Required) example 550e8400-e29b-41d4-a716-446655440000"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"groupId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"story\": {\n    \"message\": \"<string>\",\n    \"typeStory\": \"audio\",\n    \"fontSize\": 12,\n    \"url\": \"<string>\",\n    \"duration\": 60\n  },\n  \"thumbnailUrl\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/spaces"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": null,
+													"cookie": [],
+													"responseTime": null,
+													"body": null
+												}
+											]
+										},
+										{
+											"name": "Text should not be Blank space",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "3d6e30f9-e9d1-4479-b602-436a7f0bfce0",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "c75cbb77-317f-49b0-9076-2cdf1b2be0ff",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "userId",
+														"value": "550e8400-e29b-41d4-a716-446655440000",
+														"description": "(Required) example 550e8400-e29b-41d4-a716-446655440000"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4OSIsInNlc3Npb25JZCI6IjY1NDJkMzEyNzUyNjc0MWFmNDE0YzA4YiIsInYiOjIsImlhdCI6MTY5ODg3ODIyNn0.TNM4acgvcx7E99q8EGtdQUICEtP7uGaO2H8I-k3WCcQ",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\"groupId\":\"d93e1137-5515-4168-9ff9-2712f8735023\",\n\"name\": \" \",\n\"thumbnailUrl\": \"https://glorify-app.com/wp-content/themes/glorify/dist/images/logo-glorify_d908f233.svg\",\n\"story\": {\n\"message\":\" \",\n\"typeStory\": \"text\",\n\"fontSize\": 12,\n\"url\": \"https://file\",\n\"duration\": 60\n}\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{SPACE_BACE_URL}}/api/v1/spaces"
+											},
+											"response": [
+												{
+													"id": "fafd6b72-3994-435b-a886-d2c42675eecb",
+													"name": "Space successfully created.",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "userId",
+																"value": "<string>",
+																"description": "(Required) example 550e8400-e29b-41d4-a716-446655440000"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"groupId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"story\": {\n    \"message\": \"<string>\",\n    \"typeStory\": \"audio\",\n    \"fontSize\": 12,\n    \"url\": \"<string>\",\n    \"duration\": 60\n  },\n  \"thumbnailUrl\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/spaces"
+													},
+													"status": "Created",
+													"code": 201,
+													"_postman_previewlanguage": "text",
+													"header": null,
+													"cookie": [],
+													"responseTime": null,
+													"body": null
+												},
+												{
+													"id": "4fa1965c-d75e-4060-b998-c0b3c5967ccc",
+													"name": "Bad Request.",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "userId",
+																"value": "<string>",
+																"description": "(Required) example 550e8400-e29b-41d4-a716-446655440000"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"groupId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"story\": {\n    \"message\": \"<string>\",\n    \"typeStory\": \"audio\",\n    \"fontSize\": 12,\n    \"url\": \"<string>\",\n    \"duration\": 60\n  },\n  \"thumbnailUrl\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/spaces"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": null,
+													"cookie": [],
+													"responseTime": null,
+													"body": null
+												},
+												{
+													"id": "09143b91-bf42-4103-aa64-3500dc16dbe4",
 													"name": "You do not have permission to create a space.",
 													"originalRequest": {
 														"method": "POST",
