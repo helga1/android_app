@@ -3058,6 +3058,235 @@
 															]
 														},
 														{
+															"name": "Create a new video story within a space Copy",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "4ff30d95-2f9d-431b-b5d6-c5cff6af04da",
+																		"exec": [
+																			"pm.test(\"Status code is 201\", function () {",
+																			"    pm.response.to.have.status(201);",
+																			"});",
+																			"",
+																			""
+																		],
+																		"type": "text/javascript"
+																	}
+																}
+															],
+															"id": "389daa48-75f4-4be0-8770-9b9d48ad256b",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"description": "(Required) example 507f191e810c19729de860ea",
+																		"key": "userId",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"message\": \"Message by Group member\",\n  \"typeStory\": \"text\",\n  \"fontSize\": 12,\n  \"url\": \"https://file\",\n  \"duration\": 60\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{SPACE_BACE_URL}}/api/v1/spaces/:spaceId/stories",
+																	"host": [
+																		"{{SPACE_BACE_URL}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"spaces",
+																		":spaceId",
+																		"stories"
+																	],
+																	"variable": [
+																		{
+																			"id": "ad084777-1832-4ece-a308-2a52dbb496e0",
+																			"key": "spaceId",
+																			"value": "afc406ed-b27e-49f1-824d-eab47a122fba",
+																			"description": "(Required) space uuid"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "73b721b4-7997-4eb1-9048-fb0b881cef46",
+																	"name": "Story successfully created.",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"description": "(Required) example 507f191e810c19729de860ea",
+																				"key": "userId",
+																				"value": "<string>"
+																			},
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"message\": \"<string>\",\n  \"typeStory\": \"text\",\n  \"fontSize\": 12,\n  \"url\": \"<string>\",\n  \"duration\": 60\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/spaces/:spaceId/stories",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"spaces",
+																				":spaceId",
+																				"stories"
+																			],
+																			"variable": [
+																				{
+																					"key": "spaceId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Created",
+																	"code": 201,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": ""
+																},
+																{
+																	"id": "e47bc152-41c3-4223-9a1a-e11b675b649a",
+																	"name": "Bad Request.",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"description": "(Required) example 507f191e810c19729de860ea",
+																				"key": "userId",
+																				"value": "<string>"
+																			},
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"message\": \"<string>\",\n  \"typeStory\": \"text\",\n  \"fontSize\": 12,\n  \"url\": \"<string>\",\n  \"duration\": 60\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/spaces/:spaceId/stories",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"spaces",
+																				":spaceId",
+																				"stories"
+																			],
+																			"variable": [
+																				{
+																					"key": "spaceId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Bad Request",
+																	"code": 400,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": ""
+																},
+																{
+																	"id": "9ee511de-58f3-4d84-91a5-d75c74005d3a",
+																	"name": "You do not have permission to create a story.",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"description": "(Required) example 507f191e810c19729de860ea",
+																				"key": "userId",
+																				"value": "<string>"
+																			},
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"message\": \"<string>\",\n  \"typeStory\": \"text\",\n  \"fontSize\": 12,\n  \"url\": \"<string>\",\n  \"duration\": 60\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/spaces/:spaceId/stories",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"spaces",
+																				":spaceId",
+																				"stories"
+																			],
+																			"variable": [
+																				{
+																					"key": "spaceId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Forbidden",
+																	"code": 403,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": ""
+																}
+															]
+														},
+														{
 															"name": "Verify typeStory is required",
 															"event": [
 																{
