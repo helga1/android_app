@@ -1067,7 +1067,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"+1323-337-2292\"\n}\n"
+									"raw": "{\n\t\"phone\": \"+13256984158\"\n}\n"
 								},
 								"url": "{{BASE_URL}}api/v2/users/verification/phone"
 							},
@@ -1107,7 +1107,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"+1323-337-2292\",\n    \"code\": \"0000\"\n}\n"
+									"raw": "{\n\t\"phone\": \"+13256984158\",\n    \"code\": \"0000\"\n}\n"
 								},
 								"url": "{{BASE_URL}}api/v2/users/verification/phone"
 							},
@@ -3084,7 +3084,7 @@
 																	{
 																		"description": "(Required) example 507f191e810c19729de860ea",
 																		"key": "userId",
-																		"value": "<string>"
+																		"value": "507f191e810c19729de860ea"
 																	},
 																	{
 																		"key": "Content-Type",
@@ -3291,7 +3291,7 @@
 																{
 																	"listen": "test",
 																	"script": {
-																		"id": "4ff30d95-2f9d-431b-b5d6-c5cff6af04da",
+																		"id": "6c0ab6ab-06e0-417e-ba98-caf35f9728b3",
 																		"exec": [
 																			"pm.test(\"Status code is 400\", function () {",
 																			"    pm.response.to.have.status(400);",
@@ -4536,7 +4536,25 @@
 														}
 													}
 												},
-												"url": "{{SPACE_BACE_URL}}/api/v1/spaces"
+												"url": {
+													"raw": "{{SPACE_BACE_URL}}/api/v1/spaces/:spaceId/stories",
+													"host": [
+														"{{SPACE_BACE_URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"spaces",
+														":spaceId",
+														"stories"
+													],
+													"variable": [
+														{
+															"key": "spaceId",
+															"value": ""
+														}
+													]
+												}
 											},
 											"response": [
 												{
