@@ -417,7 +417,13 @@
 										"id": "c7d0775b-510f-489f-9fc2-10bcfe4a651b",
 										"exec": [
 											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"userToken\", jsonData[\"authToken\"]);"
+											"postman.setEnvironmentVariable(\"userToken\", jsonData[\"authToken\"]);",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -436,13 +442,13 @@
 									},
 									{
 										"key": "App-Agent",
-										"value": "android 13 glorify/2.42.0",
+										"value": "android 13 glorify/2.47.0",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"+1323-337-2298\",\n    \"code\": \"0000\",\n    \"nickname\": \"arrrri\",\n    \"email\": \"arip+@test.com\"\n}\n"
+									"raw": "{\n\"phone\": \"+1323-765-2298\",\n\"code\": \"0000\",\n\"nickname\": \"arrrri\",\n\"email\": \"nnarip+ll@test.com\"\n}"
 								},
 								"url": "{{BASE_URL}}api/v2/users/verification/phone"
 							},
