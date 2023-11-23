@@ -4975,6 +4975,20 @@
 										},
 										{
 											"name": "Message text should not be empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "53adb1b0-cf09-4781-87a6-6c9ec965c8ee",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"id": "7e09c3d8-a0bd-40fc-9f2c-4109ca7d2155",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
