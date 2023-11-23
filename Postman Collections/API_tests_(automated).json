@@ -4666,7 +4666,7 @@
 											]
 										},
 										{
-											"name": "10000 chat should be the max text lenght",
+											"name": "10001 chat should be not exepted",
 											"event": [
 												{
 													"listen": "test",
