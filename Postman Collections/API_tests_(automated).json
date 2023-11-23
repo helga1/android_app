@@ -3338,7 +3338,7 @@
 																],
 																"body": {
 																	"mode": "raw",
-																	"raw": "{\n  \"message\": \"Message by Group member\",\n // \"typeStory\": \"text\",\n  \"fontSize\": 12,\n  \"url\": \"https://file\",\n  \"duration\": 60\n}",
+																	"raw": "{\n  \"message\": \"Message by Group member\",\n  //\"typeStory\": \"text\",\n  \"fontSize\": 12,\n  \"url\": \"https://file\",\n  \"duration\": 60\n}",
 																	"options": {
 																		"raw": {
 																			"headerFamily": "json",
