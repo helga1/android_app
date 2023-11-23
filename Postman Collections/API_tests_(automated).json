@@ -4552,25 +4552,7 @@
 														}
 													}
 												},
-												"url": {
-													"raw": "{{SPACE_BACE_URL}}/api/v1/spaces/:spaceId/stories",
-													"host": [
-														"{{SPACE_BACE_URL}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"spaces",
-														":spaceId",
-														"stories"
-													],
-													"variable": [
-														{
-															"key": "spaceId",
-															"value": ""
-														}
-													]
-												}
+												"url": "{{SPACE_BACE_URL}}/api/v1/spaces"
 											},
 											"response": [
 												{
