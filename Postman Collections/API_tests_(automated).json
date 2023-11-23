@@ -4497,7 +4497,7 @@
 											"request": {
 												"method": "GET",
 												"header": [],
-												"url": "{{baseUrl}}/api/v1/spaces"
+												"url": "{{SPACE_BACE_URL}}/api/v1/spaces"
 											},
 											"response": [
 												{
