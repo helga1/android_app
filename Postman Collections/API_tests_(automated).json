@@ -3073,7 +3073,7 @@
 															]
 														},
 														{
-															"name": "Create a new video story within a space Copy",
+															"name": "Create a new video story within a space",
 															"event": [
 																{
 																	"listen": "test",
