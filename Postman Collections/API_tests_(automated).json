@@ -4448,6 +4448,20 @@
 														},
 														{
 															"name": "Update a story set status to read Copy",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "cdbc3ad9-f4d9-428d-aff7-d1d3e11981c4",
+																		"exec": [
+																			"pm.test(\"Status code is 200\", function () {",
+																			"    pm.response.to.have.status(200);",
+																			"});"
+																		],
+																		"type": "text/javascript"
+																	}
+																}
+															],
 															"id": "e5cda85f-02ad-4c33-b456-529c8c71f8f7",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
@@ -4661,6 +4675,124 @@
 												}
 											],
 											"id": "40d5396e-470c-4f1b-b27a-81a574d15d6f"
+										},
+										{
+											"name": "Get stories by space and user",
+											"id": "3cb315d3-6963-4d02-9023-09d9e310a660",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "(Required) example 507f191e810c19729de860ea",
+														"key": "userId",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/spaces/:spaceId/stories",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"spaces",
+														":spaceId",
+														"stories"
+													],
+													"variable": [
+														{
+															"id": "b1c436fc-752b-44ab-8daa-fe568476dbd5",
+															"key": "spaceId",
+															"value": "<string>",
+															"description": "(Required) space uuid"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "81457335-e8cc-4f97-a6c9-28835bfd3dbf",
+													"name": "Stories.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "(Required) example 507f191e810c19729de860ea",
+																"key": "userId",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/spaces/:spaceId/stories",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"spaces",
+																":spaceId",
+																"stories"
+															],
+															"variable": [
+																{
+																	"key": "spaceId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "4b8a5b36-4617-415e-a8ab-32e80e25a1a7",
+													"name": "Bad Request.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "(Required) example 507f191e810c19729de860ea",
+																"key": "userId",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/spaces/:spaceId/stories",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"spaces",
+																":spaceId",
+																"stories"
+															],
+															"variable": [
+																{
+																	"key": "spaceId"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										},
 										{
 											"name": "Spaces Controller get Hello",
