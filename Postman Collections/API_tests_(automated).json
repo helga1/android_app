@@ -4678,6 +4678,20 @@
 										},
 										{
 											"name": "Get stories by space and user",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c6909f28-0c7f-4702-9bf4-f4779e5deb88",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"id": "3cb315d3-6963-4d02-9023-09d9e310a660",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -4688,13 +4702,13 @@
 													{
 														"description": "(Required) example 507f191e810c19729de860ea",
 														"key": "userId",
-														"value": "<string>"
+														"value": "507f191e810c19729de860ea"
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v1/spaces/:spaceId/stories",
+													"raw": "{{SPACE_BACE_URL}}/api/v1/spaces/:spaceId/stories",
 													"host": [
-														"{{baseUrl}}"
+														"{{SPACE_BACE_URL}}"
 													],
 													"path": [
 														"api",
@@ -4705,9 +4719,8 @@
 													],
 													"variable": [
 														{
-															"id": "b1c436fc-752b-44ab-8daa-fe568476dbd5",
 															"key": "spaceId",
-															"value": "<string>",
+															"value": "c22ec4ee-9db4-45b7-96b0-005f9fff3c1e",
 															"description": "(Required) space uuid"
 														}
 													]
