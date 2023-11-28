@@ -556,6 +556,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjA2Yzc4NWIzZDYzMWZlY2M5MGIzNyIsInNlc3Npb25JZCI6IjY1NjYyMTRkNzUwYzk3Njg1ZTU4NGFhOSIsInYiOjIsImlhdCI6MTcwMTE5MjAxM30.mm7oxDvgMDaP5ifUL8CtqwPOYeoDfTP5CAlkBOdwDLg"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
