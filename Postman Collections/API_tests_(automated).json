@@ -4839,6 +4839,20 @@
 										},
 										{
 											"name": "Spaces Controller create",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "8850774f-2ceb-4ebb-92cb-86f4387dd829",
+														"exec": [
+															"pm.test(\"Response time is less than 200ms\", function () {",
+															"    pm.expect(pm.response.responseTime).to.be.below(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"id": "49bcd5c5-ddaa-4b27-9f26-d1c701c833ff",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
