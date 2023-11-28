@@ -5528,7 +5528,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n\"groupId\":\"d93e1137-5515-4168-9ff9-2712f8735023\",\n\"name\": \"Space name\",\n\"thumbnailUrl\": \"https://glorify-app.com/wp-content/themes/glorify/dist/images/logo-glorify_d908f233.svg\",\n\"story\": {\n\"message\":\" \",\n\"typeStory\": \"text\",\n\"fontSize\": 12,\n\"url\": \"https://file\",\n\"duration\": 60\n}\n}\n",
+													"raw": "{\n\"groupId\":\"d93e1137-5515-4168-9ff9-2712f8735023\",\n\"name\": \"Space name\",\n\"thumbnailUrl\": \"https://glorify-app.com/wp-content/themes/glorify/dist/images/logo-glorify_d908f233.svg\",\n\"story\": {\n\"message\":\"AA\",\n\"typeStory\": \"text\",\n\"fontSize\": 12,\n\"url\": \"https://file\",\n\"duration\": 60\n}\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
