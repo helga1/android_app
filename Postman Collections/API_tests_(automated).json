@@ -2845,7 +2845,7 @@
 									"name": "spaces",
 									"item": [
 										{
-											"name": "{spaceId} Copy",
+											"name": "{spaceId}",
 											"item": [
 												{
 													"name": "stories",
@@ -4231,8 +4231,8 @@
 																	"script": {
 																		"id": "4ff30d95-2f9d-431b-b5d6-c5cff6af04da",
 																		"exec": [
-																			"pm.test(\"Status code is 201\", function () {",
-																			"    pm.response.to.have.status(201);",
+																			"pm.test(\"Status code is 400\", function () {",
+																			"    pm.response.to.have.status(400);",
 																			"});",
 																			"",
 																			""
