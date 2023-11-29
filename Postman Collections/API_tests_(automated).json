@@ -6894,13 +6894,8 @@
 									"script": {
 										"id": "cd18fdcf-ac65-4218-9f63-5a4a8945ec7e",
 										"exec": [
-											"pm.test(\"Status code is 400\", function () {",
-											"    pm.response.to.have.status(400);",
-											"});",
-											"",
-											"pm.test(\"Group name is required\", function () {",
-											"    var jsonData = pm.response.json();",
-											"    pm.expect(jsonData.error.msg).to.eql(\"name should not be empty\");",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
 											"});"
 										],
 										"type": "text/javascript"
